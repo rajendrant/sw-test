@@ -2,40 +2,44 @@
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw-test/sw.js', { scope: '/sw-test/' }).then(function(reg) {
-    // registration worked
-    console.log('Registration succeeded. Scope is ' + reg.scope);
+    if(reg.installing) {
+      console.log('Service worker installing');
+    } else if(reg.waiting) {
+      console.log('Service worker installed');
+    } else if(reg.active) {
+      console.log('Service worker active');
+    }
   }).catch(function(error) {
     // registration failed
     console.log('Registration failed with ' + error);
   });
+  navigator.serviceWorker.ready.then(function(event) {
+    console.log("ready", event);
+    setTimeout(function() {
+      fetch('https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.jpg',
+            {headers:{'X-Custom-header': 'bar'}}).then(function(data) {
+        console.log('fetch on ready complete');
+      }).catch(function() {
+        console.log('fetch on ready failed');
+      })
+    }, 3000);
+  });
 };
 
-// function for loading each image via XHR
+// function for loading each image via fetch() with an added custom header.
 
 function imgLoad(imgJSON) {
   // return a promise for an image loading
   return new Promise(function(resolve, reject) {
-    var request = new XMLHttpRequest();
-    request.open('GET', imgJSON.url);
-    request.responseType = 'blob';
-
-    request.onload = function() {
-      if (request.status == 200) {
+    fetch(imgJSON.url, {headers:{'X-Custom-header': 'bar'}}).catch(function() {
+      console.error("imgLoad fetch failed");
+    }).then(function(data) {
+        console.log("imgLoad fetch success");
         var arrayResponse = [];
-        arrayResponse[0] = request.response;
+        arrayResponse[0] = data;
         arrayResponse[1] = imgJSON;
         resolve(arrayResponse);
-      } else {
-        reject(Error('Image didn\'t load successfully; error code:' + request.statusText));
-      }
-    };
-
-    request.onerror = function() {
-      reject(Error('There was a network error.'));
-    };
-
-    // Send the request
-    request.send();
+    });
   });
 };
 
@@ -64,5 +68,4 @@ window.onload = function() {
       console.log(Error);
     });
   };
-
 };
