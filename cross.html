@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<script>
+var queryString = location.search;
+
+if (queryString && queryString.charAt(0) === '?') {
+  // Cross-Origin fetch with a custom header.
+  console.log("################################ cross.html trying fetch");
+  //fetch(queryString.substring(1)+"foo.html", {headers: {'X-Custom-Header2':'foobar'}});
+  fetch(new Request(queryString.substring(1)+"service_worker/cross_site_xfer_scope/cross_site_xfer_confirm_via_serviceworker.html",
+        {headers: {'X-Custom-Header2':'foobar'}})).then(function(data) {
+          console.log("fetch returned "+ data);
+        });
+} else {
+  console.log("################################ cross.html trying fetch2");
+  fetch("https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2@2x.png",
+        {headers: {'X-Custom-Header2':'foobar'}});
+}
+
+</script>
