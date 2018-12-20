@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body onload='console.log("onload document")'>
+
+<div style="height:10000px;"></div>
+
+Images below this line will get lazyloaded.
+
+<picture>
+  <source media="(min-width: 650px)" srcset="img/img_pink_flowers.jpg">
+  <source media="(min-width: 465px)" srcset="img/img_white_flower.jpg">
+  <img src="img/img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+
+<picture><source media="(min-width: 0)" srcset="image.jpg">
+  <img src="img/Chrome__logo.max-200x200.png">
+</picture>
+
+</body>
+</html>
