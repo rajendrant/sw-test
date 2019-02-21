@@ -9,4 +9,7 @@ http://rajendrant.github.io/sw-test/iframe.html
 
 LazyImage tests
 http://rajendrant.github.io/sw-test/lazyimage.html
+
 http://rajendrant.github.io/sw-test/lazyimagebg.html
+
+http://rajendrant.github.io/sw-test/picture_element.html
