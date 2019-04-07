@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<body onload='console.log("onload document")'>
+<img style="display:none;" onload='console.log("onload img1")'>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+</body>
+</html>
