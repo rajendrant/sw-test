@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
-<body onload='console.log("onload document")'>
-<img style="display:none;" onload='console.log("onload img1")'>
+<script>
+function on_document_load() {
+  console.log("onload document");
+  img = document.querySelector("img");
+  img.src = "img/pic_trulli.jpg";
+}
+</script>
+<body onload='on_document_load()'>
+<img id="img" style="display:none;" onload='console.log("onload img1")'>
 <br><br><br><br><br><br>
 <br><br><br><br><br><br>
 </body>
