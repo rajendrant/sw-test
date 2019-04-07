@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <script>
+function on_img_load() {
+  console.log("on_img_load");
+}
 function on_document_load() {
   console.log("onload document");
   img = document.querySelector("img");
+  img.addEventListener("load", on_img_load, false);
   img.src = "img/pic_trulli.jpg";
 }
 </script>
