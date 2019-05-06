@@ -35,8 +35,8 @@
   <div style="height:10000px;"></div>
   <br><br><br>
 
-    <img loading='lazy' data-src='img/images.jpeg' width='400' height='400' alt='' class='lazyload'>
-    <img loading='lazy' data-src='img/w3schools_green.jpg' width='401' height='401' alt='' class='lazyload'>
+    <img loading='lazy' data-src='img/images.jpeg' width='400' height='400' alt='' class='lazyload' onload='console.log("onload img1")'>
+    <img loading='lazy' data-src='img/w3schools_green.jpg' width='401' height='401' alt='' class='lazyload' onload='console.log("onload img2")'>
     
     <script>
         if ('loading' in HTMLImageElement.prototype) {
