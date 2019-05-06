@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <title>loading=lazy demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+    <style>
+        img {
+            display: block;
+            margin: 1em 0;
+        }
+
+        .fail img {
+            display: none;
+        }
+
+        pre {
+            border: 2px solid red;
+        }
+
+        .fail pre {
+            border-color: red;
+            background: pink;
+        }
+
+        .pass pre {
+            border-color: darkgreen;
+            background: lightgreen;
+        }
+    </style>
+
+  <br><br><br>
+  <div style="height:10000px;"></div>
+  <br><br><br>
+
+    <img loading='lazy' data-src='img/images.jpeg' width='400' height='400' alt='' class='lazyload'>
+    <img loading='lazy' data-src='img/w3schools_green.jpg' width='401' height='401' alt='' class='lazyload'>
+    
+    <script>
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll("img.lazyload");
+            images.forEach(img => {
+                img.src = img.dataset.src;
+            });
+        } else {
+            // Dynamically import the LazySizes library
+            let script = document.createElement("script");
+            script.async = true;
+            script.src =
+                "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
+            document.body.appendChild(script);
+        }
+    </script>
