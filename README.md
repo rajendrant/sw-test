@@ -13,3 +13,7 @@ http://rajendrant.github.io/sw-test/lazyimage.html
 http://rajendrant.github.io/sw-test/lazyimagebg.html
 
 http://rajendrant.github.io/sw-test/picture_element.html
+
+http://rajendrant.github.io/sw-test/lazydimension.html
+
+
