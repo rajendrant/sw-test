@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+svg:not(:root){overflow:hidden}
+
+.svg-jsconf-heart
+{height:26.66px;height:1.666rem;float:right;width:26.66px;width:1.666rem}
+
+.w2{width:32px;width:2rem}
+.h2{height:32px;height:2rem}
+
+  </style>
+</head>
+
 <body onload='console.log("onload document")'>
 
 Test page for <a href="https://crbug.com/950645">crbug 950645</a>
@@ -13,7 +26,7 @@ Test page for <a href="https://crbug.com/950645">crbug 950645</a>
 <br><br><br><br><br><br>
 
 <svg class="svg svg-jsconf-heart h2 w2" viewBox="0 0 16 16">
-<image decoding="async" height="16px" loading="eager" width="16px" xlink:href="https://2019.jsconf.eu/immutable/b2bdc4ffade7865a4b368a1a251d3fb499914d21/svg/jsconf-heart.svg"></image>
+<image decoding="async" height="16px" loading="lazy" width="16px" xlink:href="https://2019.jsconf.eu/immutable/b2bdc4ffade7865a4b368a1a251d3fb499914d21/svg/jsconf-heart.svg"></image>
 </svg>
 
 <link href="https://2019.jsconf.eu/immutable/b2bdc4ffade7865a4b368a1a251d3fb499914d21/svg/jsconf-heart.svg"
