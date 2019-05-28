@@ -2,12 +2,47 @@
 <html>
 <head>
 <style>
-.pseudo-icon::before {
+.pseudo-before1::before {
   content: '';
   display: block;
   height: 48px;
   width: 48px;
   background: url('https://www.gstatic.com/images/icons/material/system_gm/1x/auto_awesome_black_48dp.png');
+}
+.pseudo-before2::before {
+  content: '';
+  display: block;
+  height: 48px;
+  width: 48px;
+  background: url('https://www.gstatic.com/images/icons/material/system_gm/1x/auto_awesome_gm_blue_48dp.png');
+}
+.pseudo-before3::before {
+  content: '';
+  display: block;
+  height: 48px;
+  width: 48px;
+  background: url('https://www.gstatic.com/images/icons/material/system_gm/1x/auto_awesome_gm_grey_48dp.png');
+}
+.pseudo-after1::after {
+  content: '';
+  display: block;
+  height: 48px;
+  width: 48px;
+  background: url('https://www.gstatic.com/images/icons/material/system_gm/1x/auto_awesome_mosaic_black_48dp.png');
+}
+.pseudo-after2::after {
+  content: '';
+  display: block;
+  height: 48px;
+  width: 48px;
+  background: url('https://www.gstatic.com/images/icons/material/system_gm/1x/auto_awesome_mosaic_gm_blue_48dp.png');
+}
+.pseudo-after3::after {
+  content: '';
+  display: block;
+  height: 48px;
+  width: 48px;
+  background: url('https://www.gstatic.com/images/icons/material/system_gm/1x/auto_awesome_mosaic_gm_grey_48dp.png');
 }
 </style>
 </head>
@@ -19,7 +54,22 @@ Test page for <a href="https://crbug.com/950503">crbug 950503</a>
 
 <br><br><br><br><br><br>
 
-<div class="pseudo-icon">
+<div class="pseudo-before1">
+</div>
+
+<div class="pseudo-after1">
+</div>
+
+<div class="pseudo-before2 pseudo-after2">
+</div>
+
+Scroll down for more images to be lazyloaded
+<div style="height:10000px;"></div>
+
+<div class="pseudo-before3">
+</div>
+
+<div class="pseudo-after3">
 </div>
 
 </body>
