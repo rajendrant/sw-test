@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <title>loading=lazy for picture element demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+  <br><br><br>
+  <div style="height:10000px;"></div>
+  <br><br><br>
+
+<picture> 
+<source data-srcset="https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=340&a=r, https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=680&a=r 2x" media="(max-width: 37.438em)" /> 
+<source data-srcset="https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=459&a=r, https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=918&a=r 2x" media="(max-width: 63.938em)" /> 
+<source data-srcset="https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=379&a=r, https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=758&a=r 2x" media="(max-width: 85.313em)" /> 
+<source data-srcset="https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=507&a=r, https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=1014&a=r 2x" media="(max-width: 85.375em)" /> 
+<img loading="lazy" src="/img/img_tappo.png" data-src="https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=507&a=r" class="lazy" alt="Juventus-Atalanta, probabili formazioni" >
+<noscript><img loading="lazy" src="https://wips.plug.it/cips/sport.virgilio.it/cms/2019/05/dybala_1132585.jpg?w=507&a=r" alt="Juventus-Atalanta, probabili formazioni" /></noscript>
+</picture>
+
+  <script>
+  function _initLazySize() {
+		/* ---- i: LAZYSIZES CONFIG ---- */
+		window.lazySizesConfig = window.lazySizesConfig || {};
+		// use .lazy instead of .lazyload
+		window.lazySizesConfig.lazyClass = 'lazy';
+		
+		if ('loading' in HTMLImageElement.prototype) {
+	      const images = document.querySelectorAll("img.lazy");
+	      images.forEach(img => {
+	          img.src = img.dataset.src;
+	      });
+	  	} else {
+	      // Dynamically import the LazySizes library
+		    var se = document.createElement("script");
+		    se.onload=function(){lazySizes.init();};
+		    se.async = true;
+		    se.src = "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
+		    document.body.appendChild(se); 
+		}
+ 	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", _initLazySize);
+	} else { 
+		_initLazySize();
+	}
+  </script>
+</body>
+</html>
