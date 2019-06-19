@@ -524,14 +524,18 @@ function(e) {
 function(e, t) {
     "use strict";
     var i = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    console.log('line 527')
     e.fn.imagesLoaded = function(n) {
+        console.log('line 529')
         function o() {
+            console.log('line 531')
             var t = e(u)
               , i = e(h);
             s && (h.length ? s.reject(l, t, i) : s.resolve(l)),
             e.isFunction(n) && n.call(a, l, t, i)
         }
         function r(t, n) {
+            console.log('line 538')
             t.src !== i && -1 === e.inArray(t, d) && (d.push(t),
             n ? h.push(t) : u.push(t),
             e.data(t, "imagesLoaded", {
@@ -549,12 +553,14 @@ function(e, t) {
           , d = []
           , u = []
           , h = [];
+        console.log('line 556')
         return e.isPlainObject(n) && e.each(n, function(e, t) {
             "callback" === e ? n = t : s && s[e](t)
         }),
         l.length ? l.bind("load.imagesLoaded error.imagesLoaded", function(e) {
             r(e.target, "error" === e.type)
         }).each(function(n, o) {
+            console.log('line 563')
             var a = o.src
               , s = e.data(o, "imagesLoaded");
             return s && s.src === a ? void r(o, s.isBroken) : o.complete && o.naturalWidth !== t ? void r(o, 0 === o.naturalWidth || 0 === o.naturalHeight) : void ((o.readyState || o.complete) && (o.src = i,
