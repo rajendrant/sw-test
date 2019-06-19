@@ -49,6 +49,8 @@ function imageLoadHandler(e) {
         var t = $(this);
         t.hide();
         var i = t.parent();
+        console.log('imageLoadHandler', t, i.width(), t.width(),
+                   t.attr("src"), t.data("src-large"), t.attr("src", t.data("src-large")))
         i.width() > t.width() && t.attr("src") != t.data("src-large") && t.attr("src", t.data("src-large")),
         i.css("background-image", "url(" + t.attr("src") + ")"),
         i.addClass("image"),
