@@ -326,7 +326,7 @@ function(e, t, i) {
         },
         img: {
             position: "absolute",
-            display: "none",
+            //display: "none",
             margin: 0,
             padding: 0,
             border: "none",
