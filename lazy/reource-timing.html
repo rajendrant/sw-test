@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script>
+function dump_resource_timing() {
+  var resources = performance.getEntriesByType("resource");
+  if (resources === undefined || resources.length <= 0) {
+    console.log("there are NO `resource` performance records");
+    return;
+  }
+  resources.forEach((entry) => {
+    console.log(entry.name, entry.transferSize, entry.decodedBodySize, entry.entryType);
+    console.log(entry);
+  });
+}
+</script>
+</head>
 <body onload='console.log("onload document")'>
 
 <br><br><br>
