@@ -15,7 +15,7 @@ function dump_resource_timing() {
 }
 </script>
 </head>
-<body onload='console.log("onload document")'>
+<body onload='console.log("onload document"); dump_resource_timing();'>
 
 <br><br><br>
 <button onclick="dump_resource_timing()">Dump ResourceTiming</button>
