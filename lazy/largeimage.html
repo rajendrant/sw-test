@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body onload='console.log("onload document")'>
+This page is used to test the behavior when large images are present.
+<img src="../img/large1.jpeg" onload='console.log("onload img1")'>
+<img src="../img/large2.jpeg" onload='console.log("onload img2")'>
+<img src="../img/large1.jpeg?foo" onload='console.log("onload img1-foo")'>
+<img src="../img/large2.jpeg?foo" onload='console.log("onload img2-foo")'>
+<img src="../img/large1.jpeg?bar" onload='console.log("onload img1-bar")'>
+<img src="../img/large2.jpeg?bar" onload='console.log("onload img2-bar")'>
+</body>
+</html>
