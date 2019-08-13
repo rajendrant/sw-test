@@ -2,7 +2,7 @@
 <html>
 <body onload='console.log("onload document")'>
 <div style="height:10000px;"></div>
-<iframe class="lazyload" loading="lazy" 
+<iframe class="lazyload" loading="auto" 
         data-src="https://dailymail.co.uk" width="100%" height="200"
         onload='console.log("onload img1")'>
 </iframe>
@@ -13,11 +13,12 @@ if ('loading' in HTMLImageElement.prototype) {
   const iframes = document.querySelectorAll('iframe.lazyload');
   iframes.forEach(iframe => {
     iframe.src = iframe.dataset.src;
+    iframe.loading = 'lazy';
   });
 
   const images = document.querySelectorAll("img.lazyload");
   images.forEach(img => {
-      img.src = img.dataset.src;
+    img.src = img.dataset.src;
   });
 }
 </script>
