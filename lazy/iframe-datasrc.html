@@ -2,7 +2,7 @@
 <html>
 <body onload='console.log("onload document")'>
 <div style="height:10000px;"></div>
-<iframe data-src="https://dailymail.co.uk" width="100%" height="200" loading="lazy"></iframe>
+<iframe class="fallback" data-src="https://dailymail.co.uk" width="100%" height="200" loading="lazy"></iframe>
 <script>
 var iframe = document.querySelector('iframe.fallback');
 iframe.src = iframe.dataset.src;
