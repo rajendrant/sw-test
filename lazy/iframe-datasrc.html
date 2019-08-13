@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<script>
+var iframe = document.querySelector('iframe.fallback');
+iframe.src = iframe.dataset.src;
+</script>
+<body onload='console.log("onload document")'>
+<div style="height:10000px;"></div>
+<iframe src="https://dailymail.co.uk" width="100%" height="200" loading="lazy"></iframe>
+</body>
+</html>
