@@ -7,7 +7,7 @@
 <script>
 if ('loading' in HTMLImageElement.prototype) {
   console.log("lazyload support available");
-  const iframes = document.querySelector('iframe.lazyload');
+  const iframes = document.querySelectorAll('iframe.lazyload');
   iframes.forEach(iframe => {
     iframe.src = iframe.dataset.src;
   });
