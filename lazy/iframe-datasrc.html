@@ -2,7 +2,10 @@
 <html>
 <body onload='console.log("onload document")'>
 <div style="height:10000px;"></div>
-<iframe class="lazyload" loading="lazy" data-src="https://dailymail.co.uk" width="100%" height="200"></iframe>
+<iframe class="lazyload" loading="lazy" 
+        data-src="https://dailymail.co.uk" width="100%" height="200"
+        onload='console.log("onload img1")'>
+</iframe>
 <img class="lazyload" loading='lazy' data-src='../img/images.jpeg' width='100' height='100' alt='' onload='console.log("onload img1")'>
 <script>
 if ('loading' in HTMLImageElement.prototype) {
