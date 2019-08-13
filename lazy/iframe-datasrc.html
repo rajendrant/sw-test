@@ -3,6 +3,7 @@
 <script>
 var iframe = document.querySelector('iframe.fallback');
 iframe.src = iframe.dataset.src;
+console.log(iframe.dataset.src);
 </script>
 <body onload='console.log("onload document")'>
 <div style="height:10000px;"></div>
