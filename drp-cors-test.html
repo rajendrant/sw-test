@@ -11,7 +11,7 @@ This page loads a cross-origin request that has custom headers and shows the res
 <script>
 $( document ).ready(() => {
   $.ajax({
-    url: 'http://rajendrant.pythonanywhere.com/echo-headers.html'
+    url: 'http://rajendrant.pythonanywhere.com/echo-headers.html',
     type: 'post',
     headers: {
       custom_header: 'custom_value'
