@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<body>
+This page loads a cross-origin request that has custom headers and shows the response below.
+<div id="result"></div>
+</body>
+<script>
+$( document ).ready(() => {
+  $.ajax({
+    url: 'http://rajendrant.pythonanywhere.com/echo-headers.html'
+    type: 'post',
+    headers: {
+      custom_header: 'custom_value'
+    },
+    success: data => {
+      console.log(data)
+      $('#result').append(data)
+    }
+  })
+})
+</script>
+</html>
