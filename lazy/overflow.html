@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<style>
+.img {
+  display: block;
+  width: 100%;
+}
+
+.img-container {
+  width: 200px;
+  margin-bottom: 200px;
+  border-radius: 50%; /* Disable this rule, and they all load */
+  background: #eee;
+  overflow: hidden;
+  border: 1px solid red;
+}
+</style>
+<body onload='console.log("onload document")'>
+<div>
+This page has two lazyloaded images. One image with display:overflow that does not load as expected.
+And the other image that loads fine when scrolled down.
+</div>
+<div style="height:10000px;"></div>
+
+<div style="img-container"><img class="img" src="../jpg/pic_trulli.jpg" alt="" loading="lazy"></div>
+
+<img loading="lazy" src="../img/android-logo-200x200.jpg"
+onload='console.log("onload img10")'>
+
+</body>
+</html>
